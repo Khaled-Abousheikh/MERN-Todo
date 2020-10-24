@@ -13,8 +13,10 @@ var corsOptions = {
   origin: "http://localhost:5000",
 };
 // app.use(cors(bodyOptions));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use("/api", require("./api"));
 
 /*Create default route*/
