@@ -21,9 +21,9 @@ app.use("/api", require("./api"));
 
 /*Create default route*/
 
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the REST API" });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to the REST API" });
+// });
 
 /*Set PORT and listen for request*/
 const PORT = process.env.PORT || 5000;
