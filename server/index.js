@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./server.js");
 const path = require("path");
+const mongoose = require("mongoose");
 
 /*Initialize Express server*/
 const app = express();
@@ -40,15 +41,15 @@ if (process.env.NODE_ENV === "production") {
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
-// db.mongoose
-//   .connect(db.url, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("Connected to the database!");
-//   })
-//   .catch((err) => {
-//     console.log("Cannot connect to the database!", err);
-//     process.exit();
-//   });
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch((err) => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+  });
